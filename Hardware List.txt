@@ -1,0 +1,16 @@
+1.机器人课程所用小车
+2.DFrobot Arduino Mega2560 http://www.dfrobot.com.cn/goods-504.html#product_documents 1块
+3.微雪LD3320 http://www.waveshare.net/shop/LD3320-Board.htm 1块
+4.电平转换模块 ttps://detail.tmall.com/item.htm?id=42555748956&ali_refid=a3_430583_1006:1109983619:N:cOnwHa8eoty04QEYocp+oyMf11jimkUq:37bfe5ed506b76e477b7f9e8f9a21f18&ali_trackid=1_37bfe5ed506b76e477b7f9e8f9a21f18&spm=a230r.1.14.1   1个
+5.2.54mm插排，3pin，50个装 https://detail.tmall.com/item.htm?spm=a230r.1.14.41.30981720og5VyX&id=555299258363&ns=1&abbucket=5&skuId=3426304373977 1份
+6.焊接工具与杜邦线 
+7.TTS模块 http://www.dfrobot.com.cn/goods-491.html
+8.UART转USB https://detail.tmall.com/item.htm?id=41297073849&ali_refid=a3_430583_1006:1109983619:N:tbY/Hw70o7saWVUh3bfyZfucrPvrsQRs:5ff8c165526a5f20653bd16e7d171b9a&ali_trackid=1_5ff8c165526a5f20653bd16e7d171b9a&spm=a230r.1.14.1
+9.MEGA拓展板 http://www.dfrobot.com.cn/goods-195.html 1块
+10.热缩管套装，328个装， https://detail.tmall.com/item.htm?id=21097924084&ali_refid=a3_430583_1006:1104520036:N:05/4JzXBidWLwZElZcA7EPOYOAVm6tmr:ce36def1afdd716dc094114f37c03dde&ali_trackid=1_ce36def1afdd716dc094114f37c03dde&spm=a230r.1.14.1&skuId=3949915272196  1份
+
+
+可能需要：
+1027震动马达
+DFrobot BMI160
+
