@@ -8,7 +8,7 @@
 
   **需要解决**：Jetson Nano与麦克风与扬声器的交互；语音识别；TTS；
 
-- **计划2**：Jetson Nano通过UART或数字接口连接Arduino，Arduino连接LD3320模块（负责语音识别，自带麦克风）与TTS模块（负责发出人声，购买时附赠扬声器）。Arduino选用MEGA2560,提供足够的IO接口。LD3320使用ISP，TTS模块使用UART，而MEGA提供3个UART与1个ISP，因此有足够的IO接口。再使用一个UART接口与Jetson Nano交互。
+- **计划2**：Jetson Nano通过UART（TX2，板子边缘的六针单排排引脚）连接Arduino，Arduino连接LD3320模块（负责语音识别，自带麦克风）与TTS模块（负责发出人声，购买时附赠扬声器）。Arduino选用MEGA2560,提供足够的IO接口。LD3320使用ISP，TTS模块使用UART，而MEGA提供3个UART与1个ISP，因此有足够的IO接口。再使用一个UART接口与Jetson Nano交互。
 
   如，Jetson nano发给Arduino附播报近的障碍物信息，Arduino控制TTS发出语音播报；LD3320识别到关键词后触发Arduino函数，Arduino将这一消息传给Jetson Nano处理。
 
