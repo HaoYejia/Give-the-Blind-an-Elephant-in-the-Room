@@ -36,3 +36,68 @@
 - [ ] 发出语音提示
 - [x] 一套摇杆输入系统
 - [ ] 向盲人描述周围环境
+
+## 器材使用
+
+### 小车
+
+用户手册：https://shimo.im/docs/4DWANxnvZM8GMZCY/read
+
+一些常用命令可以在这里找到
+
+另外一些教程：https://tx19-robotics.readthedocs.io/en/latest/
+
+### Jetson Nano
+
+连接到指定的WIFI网络后，在终端输入如下命令：
+
+ssh -X 192.168.50.110
+
+密码：ros
+
+### Arduino
+
+电源：由Jetson Nano的5V引脚引出
+
+拓展板：直接插在Arudino上即可
+
+连线：
+
+（稍后奉上）
+
+**没有焊接经验的同学，千万不要不要不要不要不要在任何时候，用身体任何部位，触碰焊接区域的任何金属物品，包括电路板、烙铁等**
+
+### Linux Ubuntu
+
+常用命令：
+
+- cd XXX	转移到XXX目录
+- python XXX.py	用python运行脚本
+- sudo apt-get XXX    安装XXX软件包
+
+
+
+未安装Linux的解决办法：
+
+- 虚拟机
+
+  有可能需要设置BIOS和网络连接。两种系统可以同时运行，但都会卡顿。损害系统文件的风险很小
+
+- 双系统
+
+  系统级操作，有风险损坏文件或硬盘。不能同时运行两个系统，但每个系统可以独占硬件，因此不会很卡
+
+- Ubuntu Built-in
+
+  windows内置Ubuntu子系统。不会损坏系统文件，但没有图形界面，只有命令行
+
+### LD3320
+
+见项目文件的Introduction to SL3320
+
+### TTS模块
+
+见项目文件的Introduction to TTS module
+
+### 摄像头
+
