@@ -101,3 +101,8 @@ ssh -X 192.168.50.110
 
 ### 摄像头
 
+见tx19教程的openCV部分
+
+### On-board Vioce process
+
+见项目文件的Introduciton to onboard vioce process
