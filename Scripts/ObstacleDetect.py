@@ -1,6 +1,7 @@
 import rospy
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Twist
+from 
 
 class ObstacleDetect():
     def viberate(self,motornum): #viberate which motor
@@ -18,6 +19,8 @@ class ObstacleDetect():
                 self.map_vib_abs(i) #Mapping the direction to the viberation
             elif msg.ranges[i] < msg.range_min:
                 print('err at direction %d' %(i))
+                self.pubmsg.linear.x = 1500
+                self.pubmsg.angular.y = 90
             elif msg.ranges[i] == ' inf':
                 print('err at direction %d' %(i))
             else:
@@ -27,7 +30,7 @@ class ObstacleDetect():
     def __init__(self):
         self.obs_distance_lim = 0.3 #The limit of the obstacle that trigger the alert
         rospy.init_node('ObsDetect', anonymous=False)
-        rate = rospy.Rate(10)
+        rate = rospy.Rate(100)
         self.pub = rospy.Publisher('car/cmd_vel',Twist, queue_size=10)
         self.pubmsg = Twist()
         self.obs = rospy.Subscriber('scan',LaserScan, self.control)
