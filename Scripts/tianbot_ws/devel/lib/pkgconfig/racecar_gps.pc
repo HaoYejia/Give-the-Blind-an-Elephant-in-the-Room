@@ -1,0 +1,8 @@
+prefix=/home/tianbot/tianbot_ws/devel
+
+Name: racecar_gps
+Description: Description of racecar_gps
+Version: 0.5.0
+Cflags: 
+Libs: -L/home/tianbot/tianbot_ws/devel/lib 
+Requires: 

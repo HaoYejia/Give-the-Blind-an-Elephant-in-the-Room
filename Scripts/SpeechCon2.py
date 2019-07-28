@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 import speech_recognition as sr
 import wave
 import pyaudio

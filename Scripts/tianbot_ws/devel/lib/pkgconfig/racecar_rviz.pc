@@ -1,0 +1,8 @@
+prefix=/home/tianbot/tianbot_ws/devel
+
+Name: racecar_rviz
+Description: Description of racecar_rviz
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/tianbot/tianbot_ws/devel/lib 
+Requires: 
