@@ -3,6 +3,7 @@
 
 import rospy
 from sensor_msgs.msg import Joy
+from std_msgs.msg import String
 import speech_recognition as sr
 import wave
 import pyaudio
@@ -39,7 +40,9 @@ class TriggerVocal():
         rate = rospy.Rate(10)
         self.joystick = rospy.Subscriber('joy',Joy, self.vocalrecog)
         rospy.spin()
-        self.r = sr.Recognizer()
+        self.pubmsg = Twist()
+        self.obs = rospy.Subscriber('scan',LaserScan, self.control)
+        rospy.spin()
     
 if __name__ == '__main__':
     whatever = TriggerVocal()

@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/haoyejia/Give-the-Blind-an-Elephant-in-the-Room/Scripts/temp/ws/devel -DCMAKE_INSTALL_PREFIX=/home/haoyejia/Give-the-Blind-an-Elephant-in-the-Room/Scripts/temp/ws/install -G Unix Makefiles
