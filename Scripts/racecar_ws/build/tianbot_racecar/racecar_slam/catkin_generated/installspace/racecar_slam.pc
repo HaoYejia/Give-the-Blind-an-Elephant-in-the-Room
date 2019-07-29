@@ -1,0 +1,8 @@
+prefix=/home/haoyejia/Give-the-Blind-an-Elephant-in-the-Room/Scripts/racecar_ws/install
+
+Name: racecar_slam
+Description: Description of racecar_slam
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/haoyejia/Give-the-Blind-an-Elephant-in-the-Room/Scripts/racecar_ws/install/lib 
+Requires: 

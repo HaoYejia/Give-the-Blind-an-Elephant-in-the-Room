@@ -213,11 +213,6 @@
 import rospy
 from sensor_msgs.msg import Joy
 from std_msgs.msg import String
-import speech_recognition as sr
-import wave
-import pyaudio
-import webbrowser
-from SpeechCon2 import SpeechCon
 
 CHUNK = 1024
 FORMAT = pyaudio.paInt16

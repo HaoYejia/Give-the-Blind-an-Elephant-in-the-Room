@@ -214,10 +214,21 @@
 import rospy
 from geometry_msgs.msg import PoseStamped
 from std_msgs.msg import String
+from sensor_msgs.msg import Joy
+import time
+
 
 class SetGoal():
-    def SetGoal(self,msg):
-        if msg.String == self.case0[0]:
+    def setGoal(self,msg):
+        buttonA = 0
+        buttonB = 1
+        buttonX = 2
+        buttonY = 3
+
+        button_state = msg.buttons[buttonB]
+        if button_state > 0:
+            print('pressed')
+            print(self.case0[1])
             self.pubmsg.pose.position.x = self.case0[1]
             self.pubmsg.pose.position.y = self.case0[2]
             self.pubmsg.pose.position.x = self.case0[3]
@@ -225,27 +236,29 @@ class SetGoal():
             self.pubmsg.pose.orientation.y = self.case0[5]
             self.pubmsg.pose.orientation.z = self.case0[6]
             self.pubmsg.pose.orientation.w = self.case0[7]
-            self.pub.publish(pubmsg)
+            self.pubmsg.header.frame_id = 'map'
+            self.pubmsg.header.stamp = rospy.Time.now()
+            self.pub.publish(self.pubmsg)
         # elif msg.String == self.case1[0]:
 
         # elif msg.String == self.case2[0]:
 
-
     def __init__(self):
         rospy.init_node('SetGoal',anonymous=False)
-        self.set = rospy.Subscriber('voice_recon',String, self.SetGoal)
-        rospy.spin()
+        self.set = rospy.Subscriber('joy',Joy, self.setGoal)
         self.pub = rospy.Publisher('/move_base_simple/goal', PoseStamped, queue_size=10)
         self.pubmsg = PoseStamped()
+        rate = rospy.Rate(10)
 
         # Use 8 values to store the data of the destination
         # The first value is name
         # 2nd to 4th is coordinates x,y,z
         # The followings are oriantation, x,y,z and w in quardrants  
         # The transformation of the quardrants and matrix can be done by MATLAB
-        self.case0[8] = ['chufang',0,0,0,0,0,0,0]
+        self.case0 = ['chufang',-13.428, -3.018, 0.000,0.000, 0.000, 0.760, 0.650]
         #self.case1[8] = 0
         #self.case2[8] = 0
+        rospy.spin()
 
 
 
