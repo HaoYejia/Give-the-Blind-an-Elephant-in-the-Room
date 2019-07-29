@@ -238,6 +238,8 @@ class ObstacleDetect():
                 print('fine at direction %d' %(i))
 
         MotorMap.motorMap(obslist)
+
+        
     def __init__(self):
         self.obs_distance_lim = 0.3 #The limit of the obstacle that trigger the alert
         rospy.init_node('ObsDetect', anonymous=False)
