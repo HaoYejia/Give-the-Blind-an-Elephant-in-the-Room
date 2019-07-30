@@ -10,7 +10,7 @@ import time
 import cv2
 import pyttsx3
 import rospy
-from std_msgs import Empty
+from std_msgs.msg import Empty
 
 #engine = pyttsx3.init()
 #engine.say("Gotcha")

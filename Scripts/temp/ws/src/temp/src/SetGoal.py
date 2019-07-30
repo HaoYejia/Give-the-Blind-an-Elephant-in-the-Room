@@ -232,7 +232,6 @@ class SetGoal():
             self.pubmsg.header.stamp = rospy.Time.now()
             self.pub.publish(self.pubmsg)
         # elif msg.String == self.case1[0]:
-
         # elif msg.String == self.case2[0]:
 
     def __init__(self):
@@ -247,7 +246,7 @@ class SetGoal():
         # 2nd to 4th is coordinates x,y,z
         # The followings are oriantation, x,y,z and w in quardrants  
         # The transformation of the quardrants and matrix can be done by MATLAB
-        self.case0 = ['chufang',-13.428, -3.018, 0.000,0.000, 0.000, 0.760, 0.650]
+        self.case0 = ['chair',-13.428, -3.018, 0.000,0.000, 0.000, 0.760, 0.650]
         #self.case1[8] = 0
         #self.case2[8] = 0
         rospy.spin()

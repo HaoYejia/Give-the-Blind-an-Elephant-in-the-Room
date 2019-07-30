@@ -2,10 +2,10 @@ from aip import AipSpeech
 import speech_recognition as sr
 import pyttsx3
 import rospy
-from std_msgs import Empty 
+from std_msgs.msg import Empty 
 
 
-class voice()
+class voice():
     def __init__(self):
         rospy.init_node('voice recongnition')
         self.pub = rospy.Publisher('/voice', Empty, queue_size=10)
