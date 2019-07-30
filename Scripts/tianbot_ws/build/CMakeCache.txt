@@ -511,6 +511,12 @@ racecar_bringup_BINARY_DIR:STATIC=/home/tianbot/tianbot_ws/build/tianbot_apps/ti
 racecar_bringup_SOURCE_DIR:STATIC=/home/tianbot/tianbot_ws/src/tianbot_apps/tianbot_racecar/racecar_bringup
 
 //Value Computed by CMake
+racecar_cam_BINARY_DIR:STATIC=/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_cam
+
+//Value Computed by CMake
+racecar_cam_SOURCE_DIR:STATIC=/home/tianbot/tianbot_ws/src/tianbot_apps/tianbot_racecar/racecar_cam
+
+//Value Computed by CMake
 racecar_core_BINARY_DIR:STATIC=/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_core
 
 //Value Computed by CMake
@@ -783,7 +789,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=18
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=19
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

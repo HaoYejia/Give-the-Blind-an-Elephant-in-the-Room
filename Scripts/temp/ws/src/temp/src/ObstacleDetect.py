@@ -202,7 +202,7 @@
 # @@@@OOOOOOOOOOOOOO@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@OOOOOOOOO@@@@@O@@@@@@@@@@@@@O@@@@@OO@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*..............................
 # OOOOOOOO@@@@@OOO@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@OO@O@@@@OOOO@O@@@@@@@@@@@@@@@@@@@@@@@O@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/^....*/oo\oOoo/o`]]]]/o[/\OoO
 # OOO@@@@OOO@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@OooOOOOOO@OOOOO@@@@@@@@@@@@@@@@@@@@@@@@@@@OOO@@@@@@@@@@@@@@@@@@@@@@@@@@@@OOO]o\]OOOOOOOOOOOOOOOOo\ooooo
-# O@@OOOO@O@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Oooo/oOOOOOOOOO@O@@@OOOOOOO@@@O@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@OOOOOOOOOOOOOOOOOO@@OOOOOO
+# O@@OOOO@O@@@@@@@@@@@@@@@+  c7t@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Oooo/oOOOOOOOOO@O@@@OOOOOOO@@@O@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@OOOOOOOOOOOOOOOOOO@@OOOOOO
 # @O@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@OOOOOo\oOoOOOOOOOOOOOOOOO@OOOOOO@OOO@@@@@@@@@@@@@@@@@@@@@O@@@@@@@@@@@@@@@@@@@@@@@OO@@@O@@@@O@@OOOOOOOO
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@OOOOOOOOOooOOOO@@@OO@O/O@@OOOO@@@@@@@@@@@@@@@@@@@@@@@@OOOO@@@@@@@@@@@@@@@@@@@@@@@OOOOO@@@@@OOOO
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@O@OOOOOOOO@@@@@@@@@@@@@@@@@@@@@@@@@@@@OOOOOOoO@O@@@OOO@O@@OO@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@OOO@@@@@@@@@@@@@@@@@@@@@@@OOo/[OO/[[
@@ -217,7 +217,7 @@
 import rospy
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Twist
-import MotorMap
+#import MotorMap
 
 
 
@@ -227,9 +227,9 @@ class ObstacleDetect():
             if not self.obslist == []:
                 self.obslist = []
 
-
             if msg.ranges[i]< self.obs_distance_lim: #Detect an obstacle that is too close
                 print('too close at direction %d' %(i))
+                
                 self.obslist.append(i)
 
             elif msg.ranges[i] == ' inf':
@@ -239,7 +239,7 @@ class ObstacleDetect():
 
         MotorMap.motorMap(obslist)
 
-        
+
     def __init__(self):
         self.obs_distance_lim = 0.3 #The limit of the obstacle that trigger the alert
         rospy.init_node('ObsDetect', anonymous=False)

@@ -6,6 +6,7 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("ros_astra_launch")
+subdirs("tianbot_apps/tianbot_racecar/racecar_cam")
 subdirs("tianbot_apps/tianbot_racecar/racecar_rviz")
 subdirs("tianbot_apps/tianbot_racecar/racecar_test")
 subdirs("tianbot_apps/tianbot_racecar/racecar_gps")

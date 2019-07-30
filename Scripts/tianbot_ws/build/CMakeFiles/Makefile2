@@ -455,6 +455,24 @@ clean: ros_astra_launch/CMakeFiles/_catkin_empty_exported_target.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory tianbot_apps/tianbot_racecar/racecar_cam
+
+# Convenience name for "all" pass in the directory.
+tianbot_apps/tianbot_racecar/racecar_cam/all:
+
+.PHONY : tianbot_apps/tianbot_racecar/racecar_cam/all
+
+# Convenience name for "clean" pass in the directory.
+tianbot_apps/tianbot_racecar/racecar_cam/clean:
+
+.PHONY : tianbot_apps/tianbot_racecar/racecar_cam/clean
+
+# Convenience name for "preinstall" pass in the directory.
+tianbot_apps/tianbot_racecar/racecar_cam/preinstall:
+
+.PHONY : tianbot_apps/tianbot_racecar/racecar_cam/preinstall
+
+#=============================================================================
 # Directory level rules for directory tianbot_apps/tianbot_racecar/racecar_rviz
 
 # Convenience name for "all" pass in the directory.

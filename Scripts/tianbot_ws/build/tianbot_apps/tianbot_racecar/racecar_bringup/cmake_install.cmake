@@ -53,10 +53,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/etc/catkin/profile.d" TYPE FILE FILES "/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_bringup/catkin_generated/installspace/99.my_racecar.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/etc/catkin/profile.d" TYPE FILE FILES "/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_bringup/catkin_generated/installspace/99.tianbot_racecar.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/racecar_bringup/catkin_env_hook" TYPE FILE FILES "/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_bringup/catkin_generated/installspace/99.my_racecar.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/racecar_bringup/catkin_env_hook" TYPE FILE FILES "/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_bringup/catkin_generated/installspace/99.tianbot_racecar.sh")
 endif()
 

@@ -2,4 +2,4 @@
 source_root_dir = "/home/tianbot/tianbot_ws/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/tianbot/tianbot_ws/devel;/opt/ros/melodic".split(';') if "/home/tianbot/tianbot_ws/devel;/opt/ros/melodic" != "" else []
+underlay_workspaces = "/home/tianbot/catkin_ws/devel;/home/tianbot/tianbot_ws/devel;/opt/ros/melodic".split(';') if "/home/tianbot/catkin_ws/devel;/home/tianbot/tianbot_ws/devel;/opt/ros/melodic" != "" else []

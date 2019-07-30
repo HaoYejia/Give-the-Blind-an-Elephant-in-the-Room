@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/tianbot/tianbot_ws/build/gtest/cmake_install.cmake")
   include("/home/tianbot/tianbot_ws/build/ros_astra_launch/cmake_install.cmake")
+  include("/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_cam/cmake_install.cmake")
   include("/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_rviz/cmake_install.cmake")
   include("/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_test/cmake_install.cmake")
   include("/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_gps/cmake_install.cmake")

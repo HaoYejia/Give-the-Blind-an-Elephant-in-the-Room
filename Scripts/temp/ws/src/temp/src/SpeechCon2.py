@@ -1,17 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 # -*- coding: UTF-8 -*-
+
+
 
 import speech_recognition as sr
 import wave
 import pyaudio
-import webbrowser
-
-CHUNK = 1024
-FORMAT = pyaudio.paInt16
-CHANNELS = 2
-RATE = 8000
-RECORD_SECONDS = 5
-WAVE_OUTPUT_FILENAME = "output.wav"
 
 class SpeechCon():
 
@@ -19,55 +13,54 @@ class SpeechCon():
     def record_wave(self):
         p = pyaudio.PyAudio()
 
-        stream = p.open(format=FORMAT,
-                        channels=CHANNELS,
-                        rate=RATE,
+        stream = p.open(format=self.FORMAT,
+                        channels=self.CHANNELS,
+                        rate=self.RATE,
                         input=True,
-                        frames_per_buffer=CHUNK)
-
-        print("* recording")
+                        frames_per_buffer=self.CHUNK)
 
         frames = []
 
-        for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
-            data = stream.read(CHUNK)
+        for i in range(0, int(self.RATE / self.CHUNK * self.RECORD_SECONDS)):
+            data = stream.read(self.CHUNK)
             frames.append(data)
-
-        print("* done recording")
 
         stream.stop_stream()
         stream.close()
         p.terminate()
 
-        wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
-        wf.setnchannels(CHANNELS)
-        wf.setsampwidth(p.get_sample_size(FORMAT))
-        wf.setframerate(RATE)
+        wf = wave.open(self.WAVE_OUTPUT_FILENAME, 'wb')
+        wf.setnchannels(self.CHANNELS)
+        wf.setsampwidth(p.get_sample_size(self.FORMAT))
+        wf.setframerate(self.RATE)
         wf.writeframes(b''.join(frames))
         wf.close()
 
 
-    r = sr.Recognizer()
-
-
     def speech2text(self):
+        r = sr.Recognizer()
         speech = sr.AudioFile('output.wav')
-        print(1)
         with speech as source:
             audio = r.record(source)
-            text = r.recognize_google(audio, language='zh-cmn-Hans')
-            print(text)
-            return text
+            text = r.recognize_google(audio, language='zh-CN')
+            # return text
+    def action(self):
+        self.record_wave()
+        txt = self.speech2text()
+        # print(txt)
+        return txt
+    def __init__(self):
+        self.CHUNK = 1024
+        self.FORMAT = pyaudio.paInt16
+        self.CHANNELS = 2
+        self.RATE = 8000
+        self.RECORD_SECONDS = 5
+        self.WAVE_OUTPUT_FILENAME = "output.wav"
 
-
-    def text2cmd(self):
-        if '谷歌' in speech2text():
-            webbrowser.open('http://www.google.com')
-        if '百度' in speech2text() :
-            webbrowser.open('http://www.google.com')
-
-    def __init__(__self__):
-        self.
+        self.action()
 
 if __name__ == '__main__':
     whatever = SpeechCon()
+
+
+

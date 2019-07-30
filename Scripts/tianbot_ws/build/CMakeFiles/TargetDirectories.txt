@@ -43,6 +43,13 @@
 /home/tianbot/tianbot_ws/build/ros_astra_launch/CMakeFiles/_catkin_empty_exported_target.dir
 /home/tianbot/tianbot_ws/build/ros_astra_launch/CMakeFiles/rebuild_cache.dir
 /home/tianbot/tianbot_ws/build/ros_astra_launch/CMakeFiles/install.dir
+/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_cam/CMakeFiles/install/strip.dir
+/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_cam/CMakeFiles/edit_cache.dir
+/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_cam/CMakeFiles/list_install_components.dir
+/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_cam/CMakeFiles/test.dir
+/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_cam/CMakeFiles/install/local.dir
+/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_cam/CMakeFiles/rebuild_cache.dir
+/home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_cam/CMakeFiles/install.dir
 /home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_rviz/CMakeFiles/install/strip.dir
 /home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_rviz/CMakeFiles/edit_cache.dir
 /home/tianbot/tianbot_ws/build/tianbot_apps/tianbot_racecar/racecar_rviz/CMakeFiles/list_install_components.dir
