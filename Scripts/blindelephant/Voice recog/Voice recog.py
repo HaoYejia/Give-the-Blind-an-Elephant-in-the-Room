@@ -3,17 +3,18 @@ import speech_recognition as sr
 import pyttsx3
 import rospy
 from std_msgs.msg import Empty 
+from std_msgs.msg import String
 
 
 class voice():
     def __init__(self):
-        rospy.init_node('voice recongnition')
+        rospy.init_node('voice_recongnition')
         self.pub = rospy.Publisher('/voice', Empty, queue_size=10)
         self.pub2 = rospy.Publisher('/txt',String, queue_size=10)
         self.sub = rospy.Subscriber('/second_time', Empty, self.callBack)
         self.msg = Empty()
         self.msg = True
-        if get_text():
+        if self.get_text():
             self.pub.publish(self.msg)
             
         print("OK")
