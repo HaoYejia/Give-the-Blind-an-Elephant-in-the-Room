@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/haoyejia/carto_ws/install_isolated/include",
+        "/opt/ros/kinetic/include",
+        "/home/haoyejia/ws/src/racecar_simulator/include",
+        "/usr/include"
+      ],
+      "name": "Linux"
+    }
+  ]
+}

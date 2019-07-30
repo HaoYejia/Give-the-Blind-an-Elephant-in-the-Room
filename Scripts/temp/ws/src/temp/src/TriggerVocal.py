@@ -213,15 +213,37 @@
 import rospy
 from sensor_msgs.msg import Joy
 from std_msgs.msg import String
+from aip import AipSpeech
+import speech_recognition as sr
+import pyttsx3
 
-CHUNK = 1024
-FORMAT = pyaudio.paInt16
-CHANNELS = 2
-RATE = 8000
-RECORD_SECONDS = 5
-WAVE_OUTPUT_FILENAME = "output.wav"
+
 
 class TriggerVocal():
+
+    def get_text(self):
+    
+        client = AipSpeech(self.APP_ID, self.API_KEY, self.SECRET_KEY)
+        r = sr.Recognizer()
+        mic = sr.Microphone()
+        with mic as source:
+            r.adjust_for_ambient_noise(source)
+            audio = r.listen(source)
+            audio_data = audio.get_wav_data(convert_rate=16000)
+            engine = pyttsx3.init()
+            engine.say('Please begin speaking')
+            engine.runAndWait()
+            result = client.asr(audio_data, 'wav', 16000, {'dev_pid': 1536, })
+            try:
+                text = result['result'][0]
+            except Exception as e:
+                engine = pyttsx3.init()
+                engine.say('Failedf')
+                engine.runAndWait()
+
+                text = "Failed"
+        return text
+
     def vocalrecog(self,msg):
         buttonA = 0
         buttonB = 1
@@ -230,22 +252,23 @@ class TriggerVocal():
 
         button_state = msg.buttons[buttonA]
         if button_state > 0:    
-            print('PressedA')
-            SpeechCon.record_wave()
-            txt = SpeechCon.speech2text()
-            print (txt)
-
-        else:
-            print('noPressedA')
-
+            self.text = self.get_text()
+            self.pubmsg.String = self.text
+            
 
     def __init__(self):
         rospy.init_node('Vocaltrigger',anonymous=False)
         rate = rospy.Rate(10)
         self.joystick = rospy.Subscriber('joy',Joy, self.vocalrecog)
+        self.pub = rospy.Publisher('/speech',String, queue_size=10)
+        self.pubmsg = String()
+        
+
+        self.APP_ID = '15311704'
+        self.API_KEY = 'yTzBl40WBlhFOo1GnKk0YQTN'
+        self.SECRET_KEY = 'xpWedO1u0ZLATHijhetFo7dE5ibMsI6Q'
+        self.text = ''
+        
         rospy.spin()
-        self.pubmsg = Twist()
-        rospy.spin()
-    
 if __name__ == '__main__':
     whatever = TriggerVocal()

@@ -224,30 +224,34 @@ from geometry_msgs.msg import Twist
 class ObstacleDetect():
     def control(self,msg):
         for i in range(1,360):
-            if not self.obslist == []:
-                self.obslist = []
+            # if not self.obslist == []:
+            #     self.obslist = []
 
-            if msg.ranges[i]< self.obs_distance_lim: #Detect an obstacle that is too close
+            # self.obslist.append(i)
+            self.pubmsg.linear.x = 1330
+            self.pubmsg.angular.z = 90
+
+            if msg.ranges[i]< self.obs_distance_lim and( i <= 45 or i >= 315): #Detect an obstacle that is too close
                 print('too close at direction %d' %(i))
-                
-                self.obslist.append(i)
+                self.pub.publish(self.pubmsg)
 
-            elif msg.ranges[i] == ' inf':
-                print('err at direction %d' %(i))
+            # elif msg.ranges[i] == ' inf':
+            #     print('err at direction %d' %(i))
             else:
-                print('fine at direction %d' %(i))
+            #     print('fine at direction %d' %(i))
+                break
 
-        MotorMap.motorMap(obslist)
+        # MotorMap.motorMap(obslist)
 
 
     def __init__(self):
-        self.obs_distance_lim = 0.3 #The limit of the obstacle that trigger the alert
+        self.obs_distance_lim = 1 #The limit of the obstacle that trigger the alert
         rospy.init_node('ObsDetect', anonymous=False)
         rate = rospy.Rate(100)
         self.pub = rospy.Publisher('car/cmd_vel',Twist, queue_size=10)
         self.pubmsg = Twist()
         self.obs = rospy.Subscriber('scan',LaserScan, self.control)
-        self.obslist = []
+        # self.obslist = []
         rospy.spin()
 
 

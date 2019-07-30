@@ -220,15 +220,7 @@ import time
 
 class SetGoal():
     def setGoal(self,msg):
-        buttonA = 0
-        buttonB = 1
-        buttonX = 2
-        buttonY = 3
-
-        button_state = msg.buttons[buttonB]
-        if button_state > 0:
-            print('pressed')
-            print(self.case0[1])
+        if msg.String == self.case0[0]:
             self.pubmsg.pose.position.x = self.case0[1]
             self.pubmsg.pose.position.y = self.case0[2]
             self.pubmsg.pose.position.x = self.case0[3]
@@ -245,7 +237,7 @@ class SetGoal():
 
     def __init__(self):
         rospy.init_node('SetGoal',anonymous=False)
-        self.set = rospy.Subscriber('joy',Joy, self.setGoal)
+        self.set = rospy.Subscriber('/txt',String, self.setGoal)
         self.pub = rospy.Publisher('/move_base_simple/goal', PoseStamped, queue_size=10)
         self.pubmsg = PoseStamped()
         rate = rospy.Rate(10)

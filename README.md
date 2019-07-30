@@ -1,5 +1,11 @@
 # Give-the-Blind-an-Elephant-in-the-Room
 
+# FOR 评委大大：
+
+### 最终成品放在/Scripts/blindelephant 里～ 其他的都是半成品哈
+
+
+
 ## 技术流程设想
 
 ### 语音交互
